@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather app</title>
+    <style>
+        .per-city{
+        font-size: 15px;
+        margin-bottom:5px;
+        padding:5px;
+        color:#ffffff;
+        font-size:20px;
+        }
+        ul li{
+            list-style:none;
+        }
+        .city-weather{
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center">Hello Weather(Sumon)</h1>
+    <div class="weather">
+        <div class="city-weather" style="display:flex; justify-content:space-evenly">
+            {% for weather in weather_data %}
+            <div class="per-city">
+             <ul>
+                <li>City    : {{weather.city}}</li>
+                 <li>Temp : {{weather.temp}}<sup>0</sup>C</li>
+                <li>Weather : {{weather.weather}}</li>
+                <li>
+                    <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="">
+                </li>
+             </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
